@@ -1,0 +1,22 @@
+{
+  "include": [
+    "src/**/*",
+    "types"
+  ],
+  "exclude": [
+    "node_modules"
+  ],
+  "compilerOptions": {
+    "module": "esnext",
+    "experimentalDecorators": true,
+    "suppressImplicitAnyIndexErrors": true,
+    "jsx": "react",
+    "target": "esnext",
+    "moduleResolution": "node",
+    "allowJs": true,
+    "noEmit": true,
+    "strict": true,
+    "isolatedModules": true,
+    "esModuleInterop": true
+  }
+}

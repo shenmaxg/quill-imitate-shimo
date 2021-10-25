@@ -1,0 +1,11 @@
+<svg version="1.1" id="background" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 27 25" style="enable-background:new 0 0 27 25" xml:space="preserve"> 
+  <g transform="translate(7.000000, 7.000000)"> 
+    <rect y="13" style="fill: rgb(249, 237, 166);" class="ql-color-label" width="14" height="3"></rect> 
+    <rect x="0.5" y="13.5" style="fill:none;stroke:#333;stroke-opacity:.15" width="13" height="2"></rect> 
+  </g> 
+  <path d="M11.817,5.976l-1.971,5.135l1.113,0.427l-0.823,2.145l1.189,0.456L9.842,18h4.357l0.922-2.401
+    l1.19,0.457l0.824-2.146l1.112,0.427l1.972-5.135L11.817,5.976z M13.375,16.801h-1.787l0.856-2.23l1.557,0.598L13.375,16.801z
+    M15.622,14.505l-1.488-0.571l-2.381-0.914l0,0.001l-0.068-0.026l0.394-1.025l3.936,1.511L15.622,14.505z M17.558,12.785
+    l-6.161-2.366l1.11-2.892l6.161,2.365L17.558,12.785z">
+  </path> 
+</svg>

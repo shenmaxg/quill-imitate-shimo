@@ -1,0 +1,19 @@
+:global {
+  // app容器，因为在html中定义，用global防止名称被hash
+  #app {
+      overflow: hidden;
+      display: flex;
+      width: 100%;
+      height: 100%;
+  }
+
+  // 全局scroll样式覆盖
+  ::-webkit-scrollbar-thumb {
+      background-color: #c0c0c0;
+  }
+
+  ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+  }
+}

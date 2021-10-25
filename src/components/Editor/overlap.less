@@ -1,0 +1,501 @@
+@import 'antd/lib/style/themes/default.less';
+
+
+@allowFontSize: {
+  9: 9pt;
+  10: 10pt;
+  11: 11pt;
+  12: 12pt;
+  13: 13pt;
+  14: 14pt;
+  16: 16pt;
+  18: 18pt;
+  20: 20pt;
+  22: 22pt;
+  24: 24pt;
+  30: 30pt;
+  36: 36pt;
+}
+
+@allowHeaderSizeAfter: {
+  1: 28px;
+  2: 24px;
+  3: 20px;
+  4: 18px;
+  title: 25px;
+  subtitle: 25px;
+}
+
+@allowHeaderSizeBefore: {
+  1: 16pt;
+  2: 14pt;
+  3: 13pt;
+  4: 12pt;
+  title: 25px;
+  subtitle: 25px;
+}
+
+:global {
+  #toolbar.ql-snow.ql-toolbar {
+    height: 50px;
+    padding: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    white-space: nowrap;
+    border: none;
+    margin: 0 auto;
+    text-align: center;
+    transition: height 0.2s ease-in;
+    line-height: normal;
+    .ql-active {
+      background: #e6e6e6;
+    }
+    button {
+      width: 30px;
+      height: 30px;
+      font-size: 16px;
+      color: @text-color;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &.ql-active,&:hover,&:focus {
+        box-shadow: 0px 0px 0px 1px @shadow-color inset;
+        color: @text-color;
+        outline: none;
+      }
+    }
+    button[data-disabled] {
+      cursor: not-allowed;
+      &.ql-active,&:hover,&:focus {
+        box-shadow: none;
+        background: none;
+      }
+      svg {
+        fill: #ccc;
+      }
+    }
+    .ql-picker {
+      height: 30px;
+      font-size: 12px;
+      &:not(.ql-color-picker):not(.ql-icon-picker):not(.ql-double-picker) {
+        svg {
+          position: absolute;
+          margin-top: -2px;
+          right: 8px;
+          top: 50%;
+          width: 5px;
+          height: 3px;
+        }
+        .ql-picker-item.ql-selected::after {
+          content: ' ';
+          display: block;
+          width: 10px;
+          height: 12px;
+          background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjOTk5IiBzdHJva2Utd2lkdGg9IjMuNiIgZD0iTTIwLjUgNi40TDkuMiAxNy43bC01LjctNS42Ii8+PC9zdmc+) no-repeat center;
+          float: right;
+          margin-right: 20px;
+        }
+      } 
+      &.ql-size {
+        width: 40px;
+        .ql-picker-options {
+          width: 92px;
+        }
+      }
+      &.ql-header {
+        width: 64px;
+        .ql-picker-options {
+          width: 150px;
+        }
+      }
+      &.ql-font {
+        width: 64px;
+        .ql-picker-options {
+          width: 150px;
+        }
+        .ql-picker-item[data-value=simsun]::before {
+          font-family: SimSun, STSong, BlinkMacSystemFont, PingFang SC, Helvetica, Tahoma, Arial;
+        }
+        .ql-picker-item[data-value=kaiti]::before {
+          font-family: KaiTi, STKaiti, BlinkMacSystemFont, PingFang SC, Helvetica, Tahoma, Arial;
+        }
+        .ql-picker-item[data-value=simhei]::before {
+          font-family: SimHei, STHeiti, BlinkMacSystemFont, PingFang SC, Helvetica, Tahoma, Arial;
+        }
+        .ql-picker-item[data-value=microsoftyahei]::before {
+          font-family: "Microsoft YaHei", BlinkMacSystemFont, PingFang SC, Helvetica, Tahoma, Arial;
+        }
+        .ql-picker-item[data-value=fangsong]::before {
+          font-family: FangSong, STFangsong, BlinkMacSystemFont, PingFang SC, Helvetica, Tahoma, Arial;
+        }
+        .ql-picker-item[data-value=arial]::before {
+          font-family: Arial, BlinkMacSystemFont, PingFang SC, Helvetica, Tahoma, Arial;
+        }
+        .ql-picker-item[data-value=droid]::before {
+          font-family: 'Droid Serif', BlinkMacSystemFont, PingFang SC, Helvetica, Tahoma, Arial;
+        }
+        .ql-picker-item[data-value=source]::before {
+          font-family: 'Source Code Pro', BlinkMacSystemFont, PingFang SC, Helvetica, Tahoma, Arial;
+        }
+        .ql-picker-item[data-value=timesnewroman]::before {
+          font-family: 'Times New Roman', BlinkMacSystemFont, PingFang SC, Helvetica, Tahoma, Arial;
+        }
+        .ql-picker-item[data-value=notosans]::before {
+          font-family: 'Noto Sans JP', BlinkMacSystemFont, PingFang SC, Helvetica, Tahoma, Arial;
+        }
+        .ql-picker-item[data-disabled] {
+          cursor: not-allowed;
+        }
+        .ql-picker-item[data-disabled]::before {
+          color: #ccc;
+        }
+      }
+      &.ql-color-picker {
+        width: 40px;
+        height: 30px;
+        .ql-picker-label {
+          width: 40px;
+          height: 30px;
+          line-height: 30px;
+          padding: 0;
+          border: none;
+          text-align: center;
+          padding-left: 4px;
+          padding-right: 10px;
+          .ql-active {
+            box-shadow: none;
+            background: inherit;
+          }
+          .ql-stroke {
+            stroke-width: 1px;
+            stroke-linecap: butt;
+            stroke-linejoin: miter;
+            stroke: #555;
+          }
+          &:hover {
+            box-shadow: 0px 0px 0px 1px @shadow-color inset;
+          }
+          .color-icon {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            padding: 1px 1px 1px 0;
+            svg {
+              width: 27px;
+              height: 27px;
+            }
+            &::after {
+              clear: both;
+              content: '';
+              display: table;
+            }
+            .ql-transparent {
+              opacity: 1;
+            }
+          }
+          .color-dropdown {
+            display: inline-block;
+            width: 11px;
+            height: 30px;
+            text-align: center;
+            svg {
+              width: 5px;
+              height: 27px;
+            }
+            &.ql-expanded {
+              .ql-picker-label {
+                box-shadow: 0 0 0 1px @shadow-color inset;
+                .color-dropdown {
+                  background: #dcdcdc;
+                }
+              }
+            }
+          }
+        }
+        .ql-picker-options {
+          width: 200px;
+          text-align: justify;
+          padding: 10px;
+          border-radius: 2px;
+          box-sizing: border-box;
+          .ql-picker-item {
+            padding: 0;
+            position: relative;
+            &.ql-selected::after {
+              content: '';
+              position: absolute;
+              left: 2px;
+              top: 1px;
+              width: 10px;
+              height: 12px;
+            }
+            &[data-light='light'].ql-selected::after {
+              background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIuMjUiIGQ9Ik0xNC4zNDUgNC40MjRsLTcuOTMxIDcuOTMxLTMuOTU5LTMuOTYiIG9wYWNpdHk9Ii43Ii8+PC9zdmc+) no-repeat center;
+            }
+            &[data-light='dark'].ql-selected::after {
+              background: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBhdGggZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZmZmIiBzdHJva2Utd2lkdGg9IjIuMjUiIGQ9Ik0xNC4zNDUgNC40MjRsLTcuOTMxIDcuOTMxLTMuOTU5LTMuOTYiIG9wYWNpdHk9Ii43Ii8+PC9zdmc+) no-repeat center;
+            }
+            &:hover {
+              box-shadow: 0px 1px 3px #888;
+              border: none;
+              .color-name-tip {
+                display: inline-block;
+              }
+            }
+            .color-name-tip {
+              display: none;
+              position: absolute;
+              top: 24px;
+              left: 6px;
+              z-index: 1;
+              -webkit-transform: translateX(-50%);
+                      transform: translateX(-50%);
+              border-radius: 2px;
+              background-color: #41464b;
+              text-align: center;
+              line-height: 24px;
+              padding: 0 12px;
+              color: #fff;
+              font-size: 12px;
+              font-weight: bold;
+              white-space: nowrap;
+              pointer-events: none;
+              &::before {
+                content: " ";
+                position: absolute;
+                width: 0;
+                height: 0;
+                top: -6px;
+                left: 50%;
+                margin-left: -5px;
+                width: 0;
+                height: 0;
+                background: 0;
+                border-style: solid;
+                border-width: 0 6px 6px 6px;
+                border-color: transparent transparent #41464b transparent;
+              }
+            }
+          }
+        }
+      }
+
+      .ql-picker-label {
+        border: none;
+        outline: unset;
+        padding-right: 18px;
+        padding-left: 4px;
+        text-align: center;
+        color: @text-color;
+        display: flex;
+        justify-content: center;
+        &::before {
+          line-height: 30px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+        &.ql-active,&:hover,&:focus {
+          box-shadow: 0px 0px 0px 1px @shadow-color inset;
+          outline: none;
+          color: @text-color;
+        }
+      }
+      .ql-picker-options {
+        margin-top: 9px;
+        z-index: 200;
+        border: unset;
+        box-shadow: 0 1px 6px rgba(99,99,99,0.2);
+        padding: 5px 0;
+        border-radius: 3px;
+        left: 50%;
+        transform: translateX(-50%);
+        &::before {
+          content: '';
+          position: absolute;
+          width: 0;
+          height: 0;
+          background: 0;
+          border-style: solid;
+          border-width: 0 6px 6px 6px;
+          border-color: transparent transparent #fff transparent;
+          top: -6px;
+          left: 50%;
+          margin-left: -4px;
+        }
+        .ql-picker-item {
+          text-align: left;
+          color: @text-color;
+          padding: 8px 0 8px 20px;
+          &.ql-active,&:hover,&:focus,&.ql-selected {
+            color: @text-color;
+            outline: none;
+          }
+        }
+        each(@allowHeaderSizeAfter, {
+          .ql-picker-item[data-value="@{key}"] {
+            &.ql-selected::after {
+              height: @value !important
+            }
+          }
+        })
+        each(@allowHeaderSizeBefore, {
+          .ql-picker-item[data-value="@{key}"] {
+            &::before {
+              font-size: @value;
+              font-weight: 600;
+            }
+          }
+        })
+        .ql-picker-item[data-value="subtitle"] {
+          &::before {
+            color: #888;
+          }
+        }
+      }
+    }
+    .ql-picker[data-disabled] {
+      .ql-picker-label {
+        cursor: not-allowed;
+        &::before {
+          color: #ccc;
+        }
+        &:hover {
+          box-shadow: none !important;
+          background: none;
+        }
+        svg {
+          fill: #ccc;
+        }
+      }
+    }
+  }
+
+  #editor.ql-snow
+    .ql-editor {
+      position: relative;
+      font-size: 11pt;
+      line-height: 1.7;
+      color: @text-color;
+      outline: none;
+      overflow-y: unset;
+      border: unset;
+      min-height: 1200px;
+      > p,h1,h2,h3,h4,h5,h6,ol,ul,blockquote,ql-video {
+        outline: none;
+        padding-left: 100px;
+        padding-right: 100px;
+      }
+      each(@allowFontSize, {
+        .ql-size-@{key} {
+          font-size: @value;
+        }
+      })
+      h1, h2, h3, h4, .ql-heading-title, .ql-heading-subtitle {
+        padding-top: 8px;
+        padding-bottom: 8px;
+        font-weight: bold;
+      }
+      h1 {
+        font-size: 16pt;
+        line-height: 36px;
+        color: #333;
+      }
+      h2 {
+        font-size: 14pt;
+        line-height: 32px;
+        color: #333;
+      }
+      h3 {
+        font-size: 13pt;
+        line-height: 28px;
+        color: #333;
+      }
+      h4 {
+        font-size: 12pt;
+        line-height: 28px;
+        color: #333;
+      }
+      .ql-heading-title {
+        font-size: 20pt;
+        line-height: 40px;
+        font-weight: 700;
+      }
+      .ql-heading-subtitle {
+        font-size: 18pt;
+        line-height: 36px;
+        color: #888;
+        font-weight: 700;
+      }
+      .ql-font-microsoftyahei {
+        font-family: "Microsoft YaHei", sans-serif;
+      }
+      .ql-font-simsun {
+        font-family: SimSun, STSong, sans-serif;
+      }
+      .ql-font-kaiti {
+        font-family: KaiTi, STKaiti, sans-serif;
+      }
+      .ql-font-simhei {
+        font-family: SimHei, STHeiti, sans-serif;
+      }
+      .ql-font-fangsong {
+        font-family: FangSong, STFangsong, sans-serif;
+      }
+      .ql-font-arial {
+        font-family: Arial, sans-serif;
+      }
+      .ql-font-droid {
+        font-family: 'Droid Serif', sans-serif;
+      }
+      .ql-font-source {
+        font-family: 'Source Code Pro', sans-serif;
+      }
+      .ql-font-timesnewroman {
+        font-family: 'Times New Roman', sans-serif;
+      }
+      .ql-font-notosans {
+        font-family: 'Noto Sans JP', sans-serif;
+      }
+      .ql-commented {
+        border-bottom: 2px solid #f8e1a1 !important;
+      }
+    }
+    
+    .ql-comment {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 102;
+      .ql-comment-add-icon {
+        width: 20px;
+        height: 20px;
+        position: absolute;
+        right: 70px;
+        cursor: pointer;
+        display: none;
+        svg {
+          width: 20px;
+          height: 20px;
+          color: red;
+        }
+      }
+      .ql-comment-list {
+        position: absolute;
+        right: 0;
+        .ql-comment-add-wrapper {
+          position: absolute;
+          left: 18px;
+          width: 300px;
+          background: #fff;
+          border-radius: 2px;
+          cursor: pointer;
+        }
+        .ql-comment-submitted {
+          position: absolute;
+          left: 18px;
+          width: 300px;
+        }
+      }
+    }
+}

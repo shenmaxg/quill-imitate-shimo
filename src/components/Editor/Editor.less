@@ -1,0 +1,53 @@
+@import 'antd/lib/style/themes/default.less';
+
+.layout {
+  height: 100%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.footer {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contentWrapper {
+  display: flex;
+}
+
+.editor {
+  width: 817px;
+  background: #fff;
+  box-shadow: 0 1px 5px #ddd;
+  border: none !important;
+  height: unset !important;
+  padding: 20px 0 40px 0;
+}
+
+.menu {
+  position: fixed;
+  height: 100%;
+  top: 100px;
+  left: 0;
+  width: calc((100% - 817px)/2);
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.comment {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 102;
+  background-color: red;
+}
