@@ -106,9 +106,9 @@ const CommentList: React.FC<IProps> = (props) => {
                             <div className={styles.header}>
                                 <div className={styles.autor}>
                                     <Avatar size={20} icon={<UserOutlined />} />
-                                    <div className={styles.autorName}>张某某/13012345670</div>
+                                    <div className={styles.autorName}>张某/13012345670</div>
                                 </div>
-                                <div className={styles.time}>{dayjs(item.date).format('YYYY-MM-DD HH:mm:ss')}</div>
+                                <div className={styles.time}>{dayjs(item.date).format('MM-DD HH:mm:ss')}</div>
                             </div>
                             <div className={styles.content}>
                                 {item.comment}
